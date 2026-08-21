@@ -1,19 +1,18 @@
 import { useState } from "react";
 
-
-
 function Form(props) {
-   const [name, setName] = useState("");
+  const [name, setName] = useState("");
 
-   function handleChange(event) {
+  function handleChange(event) {
     setName(event.target.value);
   }
+
   function handleSubmit(event) {
     event.preventDefault();
     props.addTask(name);
     setName("");
   }
- 
+
   return (
     <form onSubmit={handleSubmit}>
       <h2 className="label-wrapper">
@@ -36,4 +35,5 @@ function Form(props) {
     </form>
   );
 }
+
 export default Form;
